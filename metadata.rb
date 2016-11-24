@@ -9,5 +9,5 @@ source_url       'https://github.com/softasap/sa-chef-lineinfile' if respond_to?
 issues_url       'https://github.com/softasap/sa-chef-lineinfile/issues' if respond_to?(:issues_url)
 
 %w(ubuntu).each do |os|
-	supports os
+  supports os
 end
