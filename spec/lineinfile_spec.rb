@@ -1,13 +1,13 @@
 require_relative 'spec_helper'
 
 describe 'test::lineinfile' do
-#  @buffer = StringIO.new()
+  #  @buffer = StringIO.new()
   let(:chef_run) do
     allow(File).to receive(:read).and_call_original
     allow(File).to receive(:read).with('/test1').and_return('myorigin = who knows what')
     allow(File).to receive(:read).with('/test2').and_return('  myorigin = who knows what')
 
-#    allow(File).to receive(:open).with('/test1', 'w').and_yield( @buffer )
+    #    allow(File).to receive(:open).with('/test1', 'w').and_yield( @buffer )
     ChefSpec::SoloRunner.new(step_into: ['lineinfile']).converge described_recipe
   end
 
